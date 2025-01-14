@@ -9,7 +9,7 @@ const dotenv_1 = __importDefault(require("dotenv"));
 const auth_routes_1 = __importDefault(require("./routes/auth-routes"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 app.use(express_1.default.json());
 app.use('/auth', auth_routes_1.default);
 mongoose_1.default
