@@ -1,13 +1,13 @@
 import { Request, Response, NextFunction } from 'express';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import User from '../models/userModel';
-import { signupSchema, loginSchema } from '../utils/validateSchema';
+import User from '../models/user-model';
+import { signupSchema, loginSchema } from '../utils/validate-schema';
 
 import dotenv from 'dotenv';
 dotenv.config();
 
-const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret';
+const JWT_SECRET = process.env.JWT_SECRET;
 
 export const signup = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {

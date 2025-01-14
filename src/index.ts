@@ -1,7 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import authRoutes from './routes/authRoutes';
+import authRoutes from './routes/auth-routes';
 
 dotenv.config();
 
@@ -12,7 +12,7 @@ app.use(express.json());
 app.use('/auth', authRoutes);
 
 mongoose
-    .connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/authapp')
+    .connect(process.env.MONGO_URI)
     .then(() => {
         console.log('Connected to MongoDB');
         app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`))
